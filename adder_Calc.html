@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="main">
+<h2>Adder Calc</h2>
+<label>Enter your first number:</label>
+<input id="num1" >
+<label>Enter your second number:</label>
+<input id="num2" >
+<br>
+<button onclick="addnos()">Add</button>
+<p id="result"></p>
+</div>
+</body>
+<script>a
+    var box1=document.getElementById("num1")
+    var box2=document.getElementById("num2")
+    var result=document.getElementById("result")
+    function addnos(){
+        var box1value=Number(box1.value)
+        var box2value=Number(box2.value)
+        var total=box1value+box2value
+        result.textContent=total
+    }
+</script>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    button{
+        padding:5px;
+        margin-top: 13;
+        width: 70px;
+        height: 40px;
+        align-self: center;
+        cursor: pointer;
+        border-radius: 8px;
+        background-color: #ed8876;
+        border-width: 0px;
+        color: rgb(21, 20, 20);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: medium;
+    }
+    button:hover {
+        background-color: rgb(133, 133, 147);
+        transform: scale(1.05);
+    }
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-style: solid;
+        height:350px;
+        padding:30px;
+        border-radius: 40px;
+        border-width: 0px;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px); 
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 280px;
+        padding: 30px;
+        gap: 10px;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin:0;
+        padding:0;
+        background-image:-webkit-gradient(linear, left top, right top, from(rgb(220, 137, 64)), to(rgb(114, 35, 93)));
+    }
+    #num1,#num2{
+        width: 100px;
+        height: 30px;
+        border-radius: 8px;
+        background-color: rgba(241, 232, 232, 0.928);
+        padding: 3px;
+        text-align: center;
+        border-width: 0px;
+    }
+    #result{
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+    @media (max-width: 768px) 
+    {
+        body {
+            display: grid;
+        }
+    }
+</style>
+</body>
+</html>
