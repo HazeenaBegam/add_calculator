@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Adder Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, rgb(220, 137, 64), rgb(114, 35, 93));
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 300px;
+      width: 90%;
+      gap: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    label {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      height: 35px;
+      border-radius: 8px;
+      background-color: rgba(241, 232, 232, 0.928);
+      padding: 5px;
+      text-align: center;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      height: 40px;
+      cursor: pointer;
+      border-radius: 8px;
+      background-color: #ed8876;
+      border: none;
+      color: rgb(21, 20, 20);
+      font-size: 1rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: rgb(133, 133, 147);
+      transform: scale(1.05);
+    }
+
+    #result {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      input, button {
+        font-size: 0.95rem;
+      }
+
+      .main {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h2>Adder Calc</h2>
+    <label for="num1">Enter your first number:</label>
+    <input id="num1" type="number" />
+    <label for="num2">Enter your second number:</label>
+    <input id="num2" type="number" />
+    <button onclick="addnos()">Add</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function addnos() {
+      const box1value = Number(document.getElementById("num1").value);
+      const box2value = Number(document.getElementById("num2").value);
+      const total = box1value + box2value;
+      document.getElementById("result").textContent = `Result: ${total}`;
+    }
+  </script>
+</body>
+</html>
